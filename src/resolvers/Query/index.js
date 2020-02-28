@@ -11,7 +11,7 @@ const getUser = async (parent, { id }, context, info) => {
         console.log('result:', result);
         return result;
     } catch (e) {
-        console.log('error:', error);
+        console.log('error:', e);
     }
 }
 
