@@ -6,6 +6,7 @@ const getLatestReadings = async (parent, args, context, info) => {
 
 const getUser = async (parent, { id }, context, info) => {
     try {
+        console.log('attempting request...');
         const result = await UsersService.getUser(id) || null;
         console.log('result:', result);
         return result;
