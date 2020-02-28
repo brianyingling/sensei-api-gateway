@@ -5,7 +5,13 @@ const getLatestReadings = async (parent, args, context, info) => {
 }
 
 const getUser = async (parent, { id }, context, info) => {
-    return await UsersService.getUser(id) || null;
+    try {
+        const result = await UsersService.getUser(id) || null;
+        console.log('result:', result);
+        return result;
+    } catch (e) {
+        console.log('error:', error);
+    }
 }
 
 const getSession = async (obj, args, context, info) => {
