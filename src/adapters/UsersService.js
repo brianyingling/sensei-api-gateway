@@ -1,7 +1,7 @@
 import got from 'got';
 
-const URI = 'http://10.245.225.200:9002';
-// const URI = 'http://users-service:9002';
+// const URI = 'http://10.245.225.200:9002';
+const URI = 'http://users-service:9002';
 // const URI = 'http://localhost:9002';
 
 export default class UsersService {

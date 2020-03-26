@@ -1,6 +1,7 @@
 import got from 'got';
 
 const URI = 'http://readings-service:9001';
+// const URI = 'http://localhost:9001';
 
 export default class ReadingsService {
   static async getLatestReadingOfEachLocation() {
