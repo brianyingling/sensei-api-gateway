@@ -1,7 +1,15 @@
 import { ReadingsService, UsersService } from '#root/adapters'
 
 const getLatestReadings = async (parent, args, context, info) => {
-    return await ReadingsService.getLatestReadingOfEachLocation();
+    if (!context.res.locals.session)
+        throw new Error('Unauthorized request');
+    try {
+        const result = await ReadingsService.getLatestReadingOfEachLocation();
+        return result;
+    }
+    catch (e) {
+        console.log('error:', e);
+    }
 }
 
 const getUser = async (parent, { id }, context, info) => {
