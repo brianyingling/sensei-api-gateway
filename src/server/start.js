@@ -35,6 +35,10 @@ apolloServer.applyMiddleware({
   path: '/graphql',
 });
 
+app.get('/health', (req, res) => {
+  res.send('Ok');
+});
+
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`API Gateway listening on port ${PORT}`);
 });
